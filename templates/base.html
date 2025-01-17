@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> {% block title %}{% endblock %}</title>
+    </head>
+    <body>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <header>
+            <div class="username">{%block user%}{% endblock %}</div>
+            
+            <button type="button" onclick="location.href='{{url_for('logout')}}'" class="logout-button" h>{% block button %} Log In {% endblock %}</button>
+        </header>
+        {% block content %} 
+        {% endblock %}
+    </body>
+    <style>
+        /* Общий стиль для страницы */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff; /* Светло-голубой фон */
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #4da6ff; /* Насыщенный голубой цвет */
+            color: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Стиль для имени пользователя */
+        .username {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+        /* Стиль для кнопки выхода */
+        .logout-button {
+            padding: 8px 15px;
+            font-size: 1em;
+            color: #4da6ff;
+            background-color: white;
+            border: 2px solid #4da6ff;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Эффекты при наведении */
+        .logout-button:hover {
+            background-color: #0066cc; /* Более темный голубой */
+            color: white;
+        }
+        </style>
+</html>
+
+
+
+

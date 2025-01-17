@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{%block title%}Личный кабинет - {{name}} {% endblock %}
+{%block user%} {{name}} {%endblock%}
+{%block button %} Log Out {% endblock %}
+{%block content %}
+
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/lk.css') }}">
+{% endblock %}
+
