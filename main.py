@@ -3,7 +3,8 @@ from app.forms import LoginForm
 
 
 app = Flask (__name__) 
-app.secret_key = "die"
+# app.secret_key = "die"
+
 @app.route("/")
 def home ():
     return render_template("index.html", content = ["max", "tanya", "zhora", "kira"]) #запуск html страницы
@@ -20,8 +21,10 @@ def login ():
             return redirect (url_for ("user"))
         return render_template ("login.html")
     
-
-
+@app.route ("/login1", methods = ['POST',"GET"])
+def login1 ():
+    form = LoginForm ()
+    return render_template("login1.html", form=form)
 
 @app.route ("/user")
 def user ():
